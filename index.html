@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Generic LP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" sizes="180x180" href="image/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"
+    />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- banner section starts -->
+    <section class="banner-img">
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <div class="col-md-8 col-12 mt-4">
+            <div class="logo">
+              <a href="https://www.cardbaazi.com/">
+                <img
+                  class="img-fluid"
+                  src="image/CardBaazi-Logo-White.png"
+                  width="260"
+                  height="69"
+                  alt="CardBaazi Logo"
+                />
+              </a>
+            </div>
+            <div class="banner-text mt-md-2 mt-2 px-md-0 px-5">
+              <h1 class="text-white one-app">
+                One App, <br />
+                <span class="text-yellow d-none d-md-block">
+                  Multiple Games<span class="text-white"> to Enjoy</span>
+                </span>
+
+                <span class="text-yellow d-block d-md-none">
+                  Multiple Card Games<span class="text-white"
+                    ><br />
+                    to Enjoy!</span
+                  >
+                </span>
+              </h1>
+              <h6 class="text-white">
+                Get ₹5000 Welcome Bonus | Win Up to 1 CR Daily
+              </h6>
+            </div>
+            <div
+              class="form-group input-group flex-nowrap d-none d-md-block mt-5"
+            >
+              <form id="mobRowId" method="post">
+                <div class="form-group input-group flex-nowrap">
+                  <span class="border-lable-flt">
+                    <input
+                      type="number"
+                      onkeyup="success()"
+                      onkeypress="javascript:return isNumber(event)"
+                      maxlength="10"
+                      name="to"
+                      class="form-control"
+                      id="label-name"
+                      placeholder="Enter Your Mobile Number"
+                      aria-label="Username"
+                      aria-describedby="addon-wrapping"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      required
+                    />
+                    <!-- <label for="label-name">Mobile Number</label> -->
+                  </span>
+                  <input
+                    type="submit"
+                    name="submit"
+                    class="input-group-text sendLink"
+                    id="addon-wrappin"
+                    value="Get App Link"
+                    disabled
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="d-none d-sm-none d-md-block text-white">
+              <div class="row mt-4">
+                <span class="w-12 text-start border-right">
+                  <img
+                    class="icon-img"
+                    src="https://static.cardbaazi.com/assets/images/cbicons/rating-icon.png"
+                    alt=""
+                  />
+                  <span class="rating1"
+                    >4.6 <span class="rating2"><br />Rating</span></span
+                  >
+                </span>
+                <span class="w-20 text-center border-right">
+                  <img
+                    class="icon-img"
+                    src="https://static.cardbaazi.com/assets/images/cbicons/players-icon.png"
+                    alt=""
+                  />
+                  <span class="rating1"
+                    >1.62 Million
+                    <span class="rating2"><br />Players</span></span
+                  >
+                </span>
+                <span class="w-15 text-center border-right">
+                  <img
+                    class="icon-img"
+                    src="https://static.cardbaazi.com/assets/images/cbicons/android-icon.png"
+                    alt=""
+                  />
+                  <img
+                    class="icon-img"
+                    src="https://static.cardbaazi.com/assets/images/cbicons/apple-icon.png"
+                    alt=""
+                  />
+                  <span class="rating1"
+                    >&nbsp;<br />
+                    <span class="rating2">Available On</span></span
+                  >
+                </span>
+                <span class="w-15 text-center">
+                  <div class="qr-code">
+                    <img
+                      src="https://static.cardbaazi.com/assets/images/CB_Website_QR-code.jpg"
+                      alt="Call Break Game QR code"
+                      class="qr_code"
+                    />
+                    <span class="qrCodeP"
+                      >Download<br />
+                      Via QR Code
+                    </span>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div class="d-none d-sm-none d-md-block">
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <h4 class="text-white text-uppercase mt-2 fw-bold">
+                    <span style="font-size: 2rem">I</span>nstant withdrawals
+                    partner
+                  </h4>
+                </div>
+                <div class="col-md-12 my-4">
+                  <div class="">
+                    <a href="" class="bg-white py-3 px-4 rounded-pill">
+                      <img
+                        src="image/Withdrawl_Partner.png"
+                        alt="Paytm"
+                        class="img-fluid w-75"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-4 col-12 mt-0 mt-md-4 position-relative text-center"
+          >
+            <div class="mobile-position">
+              <a class="mobile" href="">
+                <img
+                  class="float-end"
+                  src="image/Genriclp_Mobile_banner.png"
+                  width="326"
+                  height="600"
+                  alt="Mobile"
+                />
+              </a>
+            </div>
+            <div class="d-block d-md-none">
+              <div class="butoon mt-2">
+                <a
+                  onclick="d_load()"
+                  data-bs-toggle="modal"
+                  class="btn bg-orange text-uppercase text-white p-3 w-75 rounded-pill position-relative"
+                  href="staticBackdrop"
+                >
+                  <strong>Download the app</strong>
+                </a>
+              </div>
+              <div class="col-md-12">
+                <h4 class="text-white text-uppercase mt-4 fw-bold instant-wdrl">
+                  <span class="inst-wdrl">I</span>nstant withdrawal partner
+                </h4>
+              </div>
+              <div class="col-md-12 mt-4">
+                <div class="">
+                  <a href="" class="bg-white py-3 px-4 rounded-pill bg_shadow">
+                    <img
+                      src="image/Withdrawl_Partner.png"
+                      alt="Paytm"
+                      class="img-fluid w-75"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- banner section end -->
+
+    <!-- how-to-install section starts 2-->
+    <section class="m-5 banner-2">
+      <div class="container text-center my-3">
+        <h1 class="text-uppercase text-center header_text">
+          How to install <span class="text-primary">Cardbaazi app</span>
+        </h1>
+        <p class="text-center dnldSteps">Downloading Steps for Android Users</p>
+        <div class="splide d-md-none d-block" id="splide1">
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+              <img
+                src="image/arrow_left.png"
+                alt=""
+                width="30"
+                height="16"
+                class="img-fluid"
+                loading="lazy"
+              />
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+              <img
+                src="image/arrow_right.png"
+                width="30"
+                height="16"
+                class="img-fluid"
+                alt=""
+                loading="lazy"
+              />
+            </button>
+          </div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <a class="downloadTheAppGTA"
+                  ><img
+                    src="image/step-1.webp"
+                    class="w-100 rummyRespon rounded-3 img-fluid"
+                    width="490"
+                    height="290"
+                    alt=""
+                    loading="lazy"
+                /></a>
+              </li>
+              <li class="splide__slide">
+                <a class="downloadTheAppGTA"
+                  ><img
+                    src="image/step-2.webp"
+                    class="w-100 rummyRespon rounded-3 img-fluid"
+                    width="490"
+                    height="290"
+                    alt=""
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="splide__slide">
+                <a class="downloadTheAppGTA"
+                  ><img
+                    src="image/step-3.webp"
+                    class="w-100 rummyRespon rounded-3 img-fluid"
+                    width="490"
+                    height="290"
+                    alt=""
+                    loading="lazy"
+                /></a>
+              </li>
+              <li class="splide__slide">
+                <a class="downloadTheAppGTA"
+                  ><img
+                    src="image/step-4.webp"
+                    class="w-100 rummyRespon rounded-3 img-fluid"
+                    width="490"
+                    height="290"
+                    alt=""
+                    loading="lazy"
+                /></a>
+              </li>
+              <li class="splide__slide">
+                <a class="downloadTheAppGTA"
+                  ><img
+                    src="image/step-5.webp"
+                    class="w-100 rummyRespon rounded-3 img-fluid"
+                    width="490"
+                    height="290"
+                    alt=""
+                    loading="lazy"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          id="Download_Promotion"
+          class="splide px-5 px-sm-3 d-md-block d-none"
+        >
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+              <img
+                src="image/arrow_left.png"
+                alt=""
+                class="img-fluid"
+                width="30"
+                height="16"
+                loading="lazy"
+              />
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+              <img
+                src="image/arrow_right.png"
+                alt=""
+                class="img-fluid"
+                width="30"
+                height="16"
+                loading="lazy"
+              />
+            </button>
+          </div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img
+                  class="img-fluid w-100"
+                  width="490"
+                  height="290"
+                  src="image/step-1.webp "
+                  alt=""
+                  loading="lazy"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid w-100"
+                  width="490"
+                  height="290"
+                  src="image/step-2.webp "
+                  alt=""
+                  loading="lazy"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid w-100"
+                  width="490"
+                  height="290"
+                  src="image/step-3.webp "
+                  alt=""
+                  loading="lazy"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid w-100"
+                  width="490"
+                  height="290"
+                  src="image/step-4.webp "
+                  alt=""
+                  loading="lazy"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  class="img-fluid w-100"
+                  width="490"
+                  height="290"
+                  src="image/step-5.webp "
+                  alt=""
+                  loading="lazy"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- how-to-install section end 2 -->
+    <div class="clearfix"></div>
+    <!-- testimonial section starts 2-->
+    <section class="m-5 mb-0 banner-2">
+      <div class="container text-center mt-3">
+        <h1 class="text-uppercase text-center header_text mb-5">
+          Player's <span class="text-primary">Testimonials</span>
+        </h1>
+        <div class="splide d-md-none d-block" id="splide2">
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+              <img
+                src="image/arrow_left.png"
+                alt=""
+                class="img-fluid"
+                width="30"
+                height="16"
+                loading="lazy"
+              />
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+              <img
+                src="image/arrow_right.png"
+                alt=""
+                class="img-fluid"
+                width="30"
+                height="16"
+                loading="lazy"
+              />
+            </button>
+          </div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-sushmagrg.webp"
+                    class="card-img img-fluid"
+                    alt="Sushmagrg"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Sushmagrg</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #d4d4d4"></span>
+                    <p class="card-text">
+                      <em>
+                        It is lovely playing on this app. I am overwhelmed to
+                        claim level 16 & 19 rewards through which I have
+                        received JBL bluetooth speakers & smartphone worth 12K.
+                        Thank you!
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-navbar.webp"
+                    class="card-img img-fluid"
+                    alt="Navabar"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Navabar</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I have been playing on this platform since the last 2
+                        years. I love to play.... I thank you for giving me this
+                        opportunity and best of luck to you for your future
+                        endeavors.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-rao.webp"
+                    class="card-img img-fluid"
+                    alt="Rao"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Rao537</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I love Baazi Rewards ! So glad I just won a Redmi 9
+                        Power through it. Apart from that, they also give
+                        amazing bonus code offers. It is truly the most
+                        rewarding gaming site.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-gogu.webp"
+                    class="card-img img-fluid"
+                    alt="Gogu"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Gogu9639</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        Baazi Rewards is my favourite on this platform. Just won
+                        a OnePlus 7T through it. They also offer lucrative bonus
+                        codes. I believe it is the most rewarding gaming site
+                        ever!
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-jkr.webp"
+                    class="card-img img-fluid"
+                    alt="jkr121"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">jkr121</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I love to play on this app. I am on cloud 9 after
+                        winning a OnePlus 7t via their rewards program, Baazi
+                        Rewards. Gameplay is easy and graphics are very good.
+                        Availing exciting offers every month. I am lovin’ it!
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-arun.webp"
+                    class="card-img img-fluid"
+                    alt="Arun"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Arun512</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I have had a great experience playing on this platform!
+                        Their interface is very smooth and user-friendly. I
+                        would strongly recommend it to all card game lovers.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-wapbari.webp"
+                    class="card-img img-fluid"
+                    alt="Swapbari"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Swapbari</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I have been playing this game for many months. This is
+                        the best game to earn money as well as to use talent.
+                        Playing this game I have earned a lot of real cash. This
+                        platform is the bestest game for every youngster to play
+                        but play it responsibly.There are games for every
+                        occasion; on festivals, weekends and many more
+                        tournaments gives more chance and experience to win a
+                        big amount of lottery.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-rahulpar.webp"
+                    class="card-img img-fluid"
+                    alt="Rahulpar"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Rahulpar</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        It is one of the best rummy app ever. It’s safe and the
+                        most rewarding. I recommend you all to play rummy on
+                        this gaming platform.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-basavaraja.webp"
+                    class="card-img img-fluid"
+                    alt="Basavaraja"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Basavaraja</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I have had a wonderful experience on this platform. I
+                        recently won a brand new Samsung Galaxy A30s through
+                        Baazi Rewards and I’m loving it!
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="testimonials" class="splide px-5 px-sm-3 d-md-block d-none">
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+              <img
+                src="image/arrow_left.png"
+                alt=""
+                class="img-fluid"
+                width="30"
+                height="16"
+                loading="lazy"
+              />
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+              <img
+                src="image/arrow_right.png"
+                alt=""
+                class="img-fluid"
+                width="30"
+                height="16"
+                loading="lazy"
+              />
+            </button>
+          </div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-sushmagrg.webp"
+                    class="card-img img-fluid"
+                    alt="Sushmagrg"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Sushmagrg</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #d4d4d4"></span>
+                    <p class="card-text">
+                      <em>
+                        It is lovely playing on this app. I am overwhelmed to
+                        claim level 16 & 19 rewards through which I have
+                        received JBL bluetooth speakers & smartphone worth 12K.
+                        Thank you!
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-navbar.webp"
+                    class="card-img img-fluid"
+                    alt="Navabar"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Navabar</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I have been playing on this platform since the last 2
+                        years. I love to play.... I thank you for giving me this
+                        opportunity and best of luck to you for your future
+                        endeavors.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-rao.webp"
+                    class="card-img img-fluid"
+                    alt="Rao"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Rao537</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I love Baazi Rewards ! So glad I just won a Redmi 9
+                        Power through it. Apart from that, they also give
+                        amazing bonus code offers. It is truly the most
+                        rewarding gaming site.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-gogu.webp"
+                    class="card-img img-fluid"
+                    alt="Gogu"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Gogu9639</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        Baazi Rewards is my favourite on this platform. Just won
+                        a OnePlus 7T through it. They also offer lucrative bonus
+                        codes. I believe it is the most rewarding gaming site
+                        ever!
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-jkr.webp"
+                    class="card-img img-fluid"
+                    alt="jkr121"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">jkr121</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I love to play on this app. I am on cloud 9 after
+                        winning a OnePlus 7t via their rewards program, Baazi
+                        Rewards. Gameplay is easy and graphics are very good.
+                        Availing exciting offers every month. I am lovin’ it!
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-arun.webp"
+                    class="card-img img-fluid"
+                    alt="Arun"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Arun512</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I have had a great experience playing on this platform!
+                        Their interface is very smooth and user-friendly. I
+                        would strongly recommend it to all card game lovers.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-wapbari.webp"
+                    class="card-img img-fluid"
+                    alt="Swapbari"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Swapbari</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I have been playing this game for many months. This is
+                        the best game to earn money as well as to use talent.
+                        Playing this game I have earned a lot of real cash. This
+                        platform is the bestest game for every youngster to play
+                        but play it responsibly.There are games for every
+                        occasion; on festivals, weekends and many more
+                        tournaments gives more chance and experience to win a
+                        big amount of lottery.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-rahulpar.webp"
+                    class="card-img img-fluid"
+                    alt="Rahulpar"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Rahulpar</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        It is one of the best rummy app ever. It’s safe and the
+                        most rewarding. I recommend you all to play rummy on
+                        this gaming platform.
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img
+                    src="image/user-basavaraja.webp"
+                    class="card-img img-fluid"
+                    alt="Basavaraja"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Basavaraja</h5>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <span class="fa fa-star" style="color: #ffd600"></span>
+                    <p class="card-text">
+                      <em>
+                        I have had a wonderful experience on this platform. I
+                        recently won a brand new Samsung Galaxy A30s through
+                        Baazi Rewards and I’m loving it!
+                      </em>
+                      <span class="float-end"
+                        ><img class="img-fluid w_60" src="image/quote.png"
+                      /></span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- testimonial section end 2 -->
+
+    <!-- why cardbaazi section starts -->
+    <section class="m-md-5 m-0 mb-5">
+      <div class="container">
+        <div class="testimonial">
+          <h1 class="text-uppercase text-center header_text">
+            why<span class="text-primary"> cardbaazi</span>
+          </h1>
+          <div class="row mt-4">
+            <div class="col-md-3 col-3 p_0">
+              <div class="card1">
+                <img
+                  src="image/support.png"
+                  class="card1-img img-fluid"
+                  alt="24x7 Support"
+                />
+                <div class="card1-body">
+                  <h5 class="card1-title fw-bold">24x7 Support</h5>
+                  <p class="d-none d-md-block size-clr"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-3 p_0">
+              <div class="card1">
+                <img
+                  src="image/rng-certified.png"
+                  class="card1-img img-fluid"
+                  alt="RNG Certified"
+                />
+                <div class="card1-body">
+                  <h5 class="card1-title fw-bold">RNG Certified</h5>
+                  <p class="d-none d-md-block size-clr"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-3 p_0">
+              <div class="card1">
+                <img
+                  src="image/withdrawl.png"
+                  class="card1-img img-fluid"
+                  alt="Instant Withdrawal"
+                />
+                <div class="card1-body">
+                  <h5 class="card1-title fw-bold">Instant Withdrawal</h5>
+                  <p class="d-none d-md-block size-clr"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-3 p_0">
+              <div class="card1">
+                <img
+                  src="image/bot-free.png"
+                  class="card1-img img-fluid"
+                  alt="Bot Free"
+                />
+                <div class="card1-body">
+                  <h5 class="card1-title fw-bold">Bot Free</h5>
+                  <p class="d-none d-md-block size-clr"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- why cardbaazi section end -->
+
+    <!-- bottom-links starts -->
+    <section>
+      <div class="bottom-links">
+        <div class="container py-4 pt-2">
+          <div class="row text_center">
+            <div class="col-md-12 mt-3">
+              <img
+                class="img-fluid"
+                src="image/CardBaazi-Logo-White_Single_footer.png"
+                alt=""
+              />
+              <h6 class="text-white float-end text-uppercase d-none d-md-block">
+                Payment Methods
+              </h6>
+            </div>
+            <div class="col-md-12 mt-3 d-block d-md-none">
+              <h6 class="text-white text-center text-uppercase">
+                Payment Methods
+              </h6>
+            </div>
+            <div class="col-md-12 col-12">
+              <span class="float-end float_none">
+                <img class="img-fluid" src="image/cashfree.png" />
+                <img class="img-fluid" src="image/paytm1.png" />
+                <img class="img-fluid" src="image/payu.png" />
+              </span>
+            </div>
+            <div class="col-md-12 d-none d-md-block mt-3">
+              <p class="text-white text-uppercase">
+                Security & Certificates
+                <span>
+                  <span
+                    class="text-white text-uppercase float-end float_none h6"
+                  >
+                    Social Media
+                  </span>
+                </span>
+              </p>
+            </div>
+            <div class="col-md-12 d-none d-md-block">
+              <img
+                class="img-fluid"
+                src="image/Security-&-Certificate.png"
+                alt=""
+              />
+              <span class="float-end float_none">
+                <img class="mx-1 img-fluid" src="image/facebook.png" />
+                <img class="mx-1 img-fluid" src="image/instagram.png" />
+                <img class="mx-1 img-fluid" src="image/linkedin.png" />
+                <img class="mx-1 img-fluid" src="image/twitter.png" />
+              </span>
+            </div>
+
+            <div class="col-md-4 col-12 mt-5 d-block d-md-none">
+              <div class="row">
+                <div class="col-md-12 col-12">
+                  <h6 class="text-white text-uppercase">Social Media</h6>
+                </div>
+                <div class="col-md-12 col-12">
+                  <span class="float_end">
+                    <img class="mx-1 img-fluid" src="image/facebook.png" />
+                    <img class="mx-1 img-fluid" src="image/instagram.png" />
+                    <img class="mx-1 img-fluid" src="image/linkedin.png" />
+                    <img class="mx-1 img-fluid" src="image/twitter.png" />
+                  </span>
+                </div>
+                <div class="col-md-12 col-12 mt-5">
+                  <p class="text-white text-uppercase">
+                    Security & Certificates
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12 col-12">
+                <img
+                  class="float-none img-fluid"
+                  src="image/Security-&-Certificate.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- bottom-links end -->
+
+    <!-- copyright section start -->
+    <div class="footer py-2 px-5 text-center">
+      <a
+        class="text-decoration-none px-md-3 px-0"
+        href="https://www.cardbaazi.com/"
+      >
+        <img
+          class="img-fluid w-10"
+          src="image/CardBaazi-Logo-Color_Small.png"
+          alt="CardBaazi Logo Small"
+        />
+      </a>
+      Copyright &nbsp; © 2023 www.cardbaazi.com. All Rights Reserved.
+    </div>
+
+    <div id="anim" class="ani dis">
+      <span class="ani-text">
+        Downloding will be start after
+        <span id="some_div" class="ani-text-color"></span>
+        <span class="ani-text-color">Sec</span>
+      </span>
+      <div id="progressbar1"></div>
+    </div>
+    <div
+      id="dload_now"
+      class="fixed-download-btm d-sm-block d-md-none d-specific"
+    >
+      <button
+        onclick="d_load()"
+        type="button"
+        class="bttn text-uppercase"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        <span class="invisible">&nbsp;</span>
+        <div>download the app</div>
+        <svg
+          width="21"
+          height="20"
+          viewBox="0 0 21 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.81597 13.0192C10.0296 13.2688 10.441 13.2688 10.6519 13.0192L14.5364 8.44445C14.808 8.12461 14.5601 7.65695 14.1171 7.65695H12.6034V0.625156C12.6034 0.278655 12.2975 0 11.923 0H8.54489C8.16778 0 7.86451 0.281078 7.86451 0.625156V7.65695H6.35082C5.90779 7.65695 5.6599 8.12461 5.93152 8.44445L9.81597 13.0192Z"
+            fill="white"
+          />
+          <path
+            d="M20.0024 12.1711H18.2935C18.0325 12.1711 17.8215 12.365 17.8215 12.6049V16.5085C17.8215 16.7484 17.6105 16.9422 17.3495 16.9422H3.12496C2.86389 16.9422 2.65292 16.7484 2.65292 16.5085V12.6049C2.65292 12.365 2.44195 12.1711 2.18088 12.1711H0.47204C0.210968 12.1711 0 12.365 0 12.6049V18.9485C0 19.1884 0.210968 19.3823 0.47204 19.3823H20.005C20.2661 19.3823 20.4771 19.1884 20.4771 18.9485V12.6049C20.4744 12.365 20.2634 12.1711 20.0024 12.1711Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </div>
+    <div id="start_now" class="btn1 dis">
+      <button onclick="startNow()" class="bttn" type="button">Start Now</button>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div id="close_btn" class="modal-header dis">
+            <button
+              onclick="location.reload()"
+              type="button"
+              class="btn-close"
+            ></button>
+          </div>
+          <div id="mute_btn" class="modal-header1 dis">
+            <button
+              onclick="mute()"
+              type="button"
+              style="
+                margin: -0.5rem -0.5rem -0.5rem auto;
+                margin-top: -4.5rem;
+                border: 0;
+                border-radius: 0.25rem;
+                padding: 6px;
+                opacity: 0.5;
+              "
+            >
+              <img
+                id="unmute"
+                class=" "
+                width="20"
+                height="20"
+                src="https://img.icons8.com/ios-filled/50/000000/room-sound.png"
+                alt="room-sound"
+              />
+              <img
+                id="mute"
+                class="dis"
+                width="20"
+                height="20"
+                src="https://img.icons8.com/ios-filled/50/mute--v1.png"
+                alt="mute--v1"
+              />
+            </button>
+          </div>
+          <div id="M1" class="modal-body">
+            <video class="m1_video" width="100%" height="80%" autoplay muted>
+              <source
+                src="https://static.cardbaazi.com/assets/video/Download-Now-CB-Updated.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+          <div id="M2" class="modal-body dis hgt">
+            <video
+              id="myVideo"
+              width="100%"
+              height="100%"
+              style="padding-bottom: 45px"
+              loop
+            >
+              <source
+                src="https://static.cardbaazi.com/assets/video/How-To-Install-Video-CB-Updated.mp4"
+                type="video/webm"
+              />
+
+              <!-- <source src="How_To_Download_Video_Revised2.mp4" type="video/mp4"> -->
+            </video>
+            <div class="btn1">
+              <button onclick="downloadApp()" class="bttn" type="button">
+                Download Again
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- fixed CTA end -->
+    <!-- copyright section end -->
+    <!-- splidsjs javascript starts-->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <!-- splidsjs javascript ends-->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/popper.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide("#Download_Promotion", {
+          type: "loop",
+          perPage: 3,
+          focus: "center",
+          autoplay: true,
+          interval: 8000,
+          flickMaxPages: 3,
+          updateOnMove: true,
+          pagination: false,
+          padding: "10%",
+          throttle: 300,
+          breakpoints: {
+            1024: {
+              perPage: 3,
+            },
+            767: {
+              perPage: 2,
+            },
+            640: {
+              perPage: 1,
+              padding: "50px",
+            },
+            1440: {
+              perPage: 1,
+              padding: "33%",
+            },
+          },
+        }).mount();
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide("#splide1", {
+          type: "loop",
+          perPage: 3,
+          pagination: false,
+          autoplay: true,
+          breakpoints: {
+            1024: {
+              perPage: 3,
+            },
+            767: {
+              perPage: 2,
+            },
+            640: {
+              perPage: 1,
+            },
+          },
+          focus: "center",
+        }).mount();
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide("#testimonials", {
+          type: "loop",
+          perPage: 3,
+          focus: "center",
+          autoplay: true,
+          interval: 8000,
+          flickMaxPages: 3,
+          updateOnMove: true,
+          pagination: false,
+          padding: "10%",
+          throttle: 300,
+          breakpoints: {
+            1024: {
+              perPage: 3,
+            },
+            767: {
+              perPage: 2,
+            },
+            640: {
+              perPage: 1,
+              padding: "50px",
+            },
+            1440: {
+              perPage: 1,
+              padding: "33%",
+            },
+          },
+        }).mount();
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide("#splide2", {
+          type: "loop",
+          perPage: 3,
+          pagination: false,
+          autoplay: true,
+          breakpoints: {
+            1024: {
+              perPage: 3,
+            },
+            767: {
+              perPage: 2,
+            },
+            640: {
+              perPage: 1,
+            },
+          },
+          focus: "center",
+        }).mount();
+      });
+    </script>
+    <script>
+      let items = document.querySelectorAll(".carousel .carousel-item");
+      items.forEach((el) => {
+        const minPerSlide = 3;
+        let next = el.nextElementSibling;
+        for (var i = 1; i < minPerSlide; i++) {
+          if (!next) {
+            // wrap carousel by using first child
+            next = items[0];
+          }
+          let cloneChild = next.cloneNode(true);
+          el.appendChild(cloneChild.children[0]);
+          next = next.nextElementSibling;
+        }
+      });
+    </script>
+    <script>
+      myID = document.getElementById("dnld-btn-footer");
+
+      var myScrollFunc = function () {
+        var y = window.scrollY;
+        if (y >= 100) {
+          myID.className = "dnld-btn-footer show";
+        } else {
+          myID.className = "dnld-btn-footer hide";
+        }
+      };
+
+      window.addEventListener("scroll", myScrollFunc);
+    </script>
+    <script>
+      if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+        document.querySelector(".mobile-app").style.display = "none";
+      }
+    </script>
+    <script>
+      function mute() {
+        var vid = document.getElementById("myVideo");
+        console.log("true");
+        if (vid.muted === false) {
+          vid.muted = true;
+          var element = document.getElementById("unmute");
+          element.classList.add("dis");
+          var element = document.getElementById("mute");
+          element.classList.remove("dis");
+        } else {
+          vid.muted = false;
+          var element = document.getElementById("unmute");
+          element.classList.remove("dis");
+          var element = document.getElementById("mute");
+          element.classList.add("dis");
+        }
+      }
+
+      function createProgressbar(id, duration, callback) {
+        var progressbar = document.getElementById(id);
+        progressbar.className = "progressbar";
+        var progressbarinner = document.createElement("div");
+        progressbarinner.className = "inner";
+        progressbarinner.style.animationDuration = duration;
+        if (typeof callback === "function") {
+          progressbarinner.addEventListener("animationend", callback);
+        }
+        progressbar.appendChild(progressbarinner);
+        progressbarinner.style.animationPlayState = "running";
+      }
+
+      addEventListener("load", function () {
+        createProgressbar("progressbar1", "3s");
+      });
+
+      var vid = document.getElementById("myVideo");
+      function d_load() {
+        console.log("clicked");
+        var element = document.getElementById("anim");
+        element.classList.remove("dis");
+        var element = document.getElementById("dload_now");
+        element.classList.add("dis");
+        var element = document.getElementById("start_now");
+        element.classList.remove("dis");
+        var elem = document.getElementById("some_div");
+        var timeLeft = 3;
+        elem.innerHTML = timeLeft;
+        function countdown() {
+          if (timeLeft == 0) {
+            clearTimeout(timerId);
+          } else {
+            --timeLeft;
+            elem.innerHTML = timeLeft;
+          }
+        }
+        var timerId = setInterval(countdown, 1000);
+        setTimeout(() => {
+          var element = document.getElementById("M1");
+          element.classList.add("dis");
+          var element = document.getElementById("M2");
+          element.classList.remove("dis");
+          var element = document.getElementById("close_btn");
+          element.classList.remove("dis");
+          var element = document.getElementById("mute_btn");
+          element.classList.remove("dis");
+          var element = document.getElementById("dload_now");
+          element.classList.add("dis");
+          var element = document.getElementById("anim");
+          element.classList.add("dis");
+          var element = document.getElementById("start_now");
+          element.classList.add("dis");
+          downloadApp();
+          vid.play();
+        }, 3000);
+      }
+      function startNow() {
+        downloadApp();
+        var element = document.getElementById("M1");
+        element.classList.add("dis");
+        var element = document.getElementById("M2");
+        element.classList.remove("dis");
+        var element = document.getElementById("close_btn");
+        element.classList.remove("dis");
+        var element = document.getElementById("mute_btn");
+        element.classList.remove("dis");
+        var element = document.getElementById("dload_now");
+        element.classList.add("dis");
+        var element = document.getElementById("anim");
+        element.classList.add("dis");
+        var element = document.getElementById("start_now");
+        element.classList.add("dis");
+        vid.play();
+      }
+
+      function downloadApp() {
+        const userAgent = navigator.userAgent;
+        if (/android/i.test(userAgent)) {
+          window.location.href =
+            "https://mobile.cardbaazi.com/sources/CardBaazi.apk";
+        }
+        if (/iPad|iPhone|iPod/i.test(userAgent)) {
+          window.location.href =
+            "https://apps.apple.com/in/app/cardbaazi-online-card-games/id1438606684";
+        }
+      }
+    </script>
+  </body>
+</html>
