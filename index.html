@@ -1269,10 +1269,16 @@
     <!-- copyright section end -->
     <!-- splidsjs javascript starts-->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <!-- splidsjs javascript starts-->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <!-- splidsjs javascript ends-->
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/popper.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"
+    ></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -1520,69 +1526,111 @@
         }
       }
     </script>
-     <script>
-    $(document).ready(function() {
-      $("#addon-wrappin").click(function(){
-        $(".text-success").hide();
-        $(".text-danger").hide();
+    <script>
+      function success() {
+        let formInput = document.getElementById("label-name");
+        sendLink = document.getElementById("addon-wrappin");
+        if (formInput.value === "") {
+          sendLink.disabled = true;
+          sendLink.style.backgroundColor = "#eba10d";
+          sendLink.style.cursor = "default";
+        } else {
+          sendLink.disabled = false;
+          sendLink.style.backgroundColor = "#eba10d";
+          sendLink.style.cursor = "pointer";
+        }
+      }
+    </script>
+    <script>
+      const getAppDownloadLinkSectionGTA =
+        document.querySelectorAll(".sendLink");
+      getAppDownloadLinkSectionGTA.forEach((e) => {
+        e.onclick = () =>
+          pushToDataLayer({
+            eventName: "send_app_download_link",
+            clickedItemText: "SEND LINK",
+            sectionName: "Get App Download Link",
+          });
       });
-      $('#mobRowId').validate({
-        rules: {
-          to: {
+      const howToInstallPageGTA = document.querySelectorAll(".downloadLink");
+      howToInstallPageGTA.forEach((e) => {
+        e.onclick = () =>
+          pushToDataLayer({
+            eventName: "send_app_download_link",
+            clickedItemText: "GET SMS WITH DOWNLOAD LINK",
+            sectionName: "how to install page",
+          });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#addon-wrappin").click(function () {
+          $(".text-success").hide();
+          $(".text-danger").hide();
+        });
+        $("#mobRowId").validate({
+          rules: {
+            to: {
               required: true,
               number: true,
-              minlength:10,
-              maxlength:10,
+              minlength: 10,
+              maxlength: 10,
               digits: true,
-          }
-        }
+            },
+          },
+        });
       });
-    });
 
-    function isNumber(evt) {
-        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+      function isNumber(evt) {
+        var iKeyCode = evt.which ? evt.which : evt.keyCode;
         if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
-            return false;
+          return false;
 
         return true;
-    }
+      }
 
-    /**
-     * 
-     * Script for cache handling in JS
-     */
-    function updateHeader(pbAccountUrl) {
-        let isTokenExists = getCookie('auth-token') != undefined ? true : false;
+      /**
+       *
+       * Script for cache handling in JS
+       */
+      function updateHeader(pbAccountUrl) {
+        let isTokenExists = getCookie("auth-token") != undefined ? true : false;
 
-
-        if ($('.avatorheader')) {
-            $('.avatorheader').remove();
-        } 
-        if($('.authentication-btn')) {
-            $('.authentication-btn').hide();
+        if ($(".avatorheader")) {
+          $(".avatorheader").remove();
+        }
+        if ($(".authentication-btn")) {
+          $(".authentication-btn").hide();
         }
 
         if (isTokenExists) {
-            let userAvtar = getCookie('user-avatar');
+          let userAvtar = getCookie("user-avatar");
 
-            let classToAdd = !isNaN(userAvtar) ? `Avatar_${userAvtar}` : (userAvtar.charAt(0).toUpperCase() + userAvtar.slice(1)) ?? 'Avatar_1';
+          let classToAdd = !isNaN(userAvtar)
+            ? `Avatar_${userAvtar}`
+            : userAvtar.charAt(0).toUpperCase() + userAvtar.slice(1) ??
+              "Avatar_1";
 
-            $('#navbarSupportedContent').append('<div class=" avatorheader d-inline-block"><button class="dropdown-toggle d-flex border-0 bg-transparent align-items-center" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">  <div class="avator ' + classToAdd + '"></div> <span class="caret"></span></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton1"><a href="https://dashboard.cardbaazi.com/home/add-money" class="maAddMoney maAddMoney_gta">Add Money</a><a href="https://dashboard.cardbaazi.com/home/cashier" class="item Mydashboard_gta">My Dashboard</a></div></div>');
+          $("#navbarSupportedContent").append(
+            '<div class=" avatorheader d-inline-block"><button class="dropdown-toggle d-flex border-0 bg-transparent align-items-center" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">  <div class="avator ' +
+              classToAdd +
+              '"></div> <span class="caret"></span></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton1"><a href="https://dashboard.cardbaazi.com/home/add-money" class="maAddMoney maAddMoney_gta">Add Money</a><a href="https://dashboard.cardbaazi.com/home/cashier" class="item Mydashboard_gta">My Dashboard</a></div></div>'
+          );
         } else {
-          $('.authentication-btn').show();
+          $(".authentication-btn").show();
         }
-    }
+      }
 
-    function getCookie(name) {
+      function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) {
-            return parts.pop().split(';').shift();
+          return parts.pop().split(";").shift();
         }
-    }
+      }
 
-    let url = "https://dashboard.cardbaazi.com";
-    updateHeader(url);
-  </script>
+      let url = "https://dashboard.cardbaazi.com";
+      updateHeader(url);
+    </script>
   </body>
 </html>
