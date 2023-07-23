@@ -1520,5 +1520,69 @@
         }
       }
     </script>
+     <script>
+    $(document).ready(function() {
+      $("#addon-wrappin").click(function(){
+        $(".text-success").hide();
+        $(".text-danger").hide();
+      });
+      $('#mobRowId').validate({
+        rules: {
+          to: {
+              required: true,
+              number: true,
+              minlength:10,
+              maxlength:10,
+              digits: true,
+          }
+        }
+      });
+    });
+
+    function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }
+
+    /**
+     * 
+     * Script for cache handling in JS
+     */
+    function updateHeader(pbAccountUrl) {
+        let isTokenExists = getCookie('auth-token') != undefined ? true : false;
+
+
+        if ($('.avatorheader')) {
+            $('.avatorheader').remove();
+        } 
+        if($('.authentication-btn')) {
+            $('.authentication-btn').hide();
+        }
+
+        if (isTokenExists) {
+            let userAvtar = getCookie('user-avatar');
+
+            let classToAdd = !isNaN(userAvtar) ? `Avatar_${userAvtar}` : (userAvtar.charAt(0).toUpperCase() + userAvtar.slice(1)) ?? 'Avatar_1';
+
+            $('#navbarSupportedContent').append('<div class=" avatorheader d-inline-block"><button class="dropdown-toggle d-flex border-0 bg-transparent align-items-center" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">  <div class="avator ' + classToAdd + '"></div> <span class="caret"></span></button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton1"><a href="https://dashboard.cardbaazi.com/home/add-money" class="maAddMoney maAddMoney_gta">Add Money</a><a href="https://dashboard.cardbaazi.com/home/cashier" class="item Mydashboard_gta">My Dashboard</a></div></div>');
+        } else {
+          $('.authentication-btn').show();
+        }
+    }
+
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) {
+            return parts.pop().split(';').shift();
+        }
+    }
+
+    let url = "https://dashboard.cardbaazi.com";
+    updateHeader(url);
+  </script>
   </body>
 </html>
